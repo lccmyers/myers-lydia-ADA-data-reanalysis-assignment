@@ -120,7 +120,6 @@ p9<-ggplot(subset(d, Species %in% "Saimiri sciureus"),
   legend.text=element_text(face="italic"))+guides(color=guide_legend(override.aes=list(fill="gray")))
 p9<-p9+theme(panel.background = element_blank(), panel.border = element_rect(colour = "black", fill=NA, size=1),
   panel.grid=element_line("gray92"), axis.title.x=element_text(face="bold"), axis.title.y=element_text(face="bold"))
-p9
 
 #plotting in the order of the graphs in the paper
 plot_grid(p3, p4, p7, p1, p2, p6, p9, p8, p5)
