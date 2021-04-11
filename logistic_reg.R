@@ -17,37 +17,37 @@ r<-glm(formula = LphsBin ~ scaled_Diam + V_1 + V_2 + V_3 + V_4,
 summary(r)
 
 r1<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Ateles belzebuth")))
+       family = "binomial", data =subset(d, Species %in% "Ateles belzebuth"))
 summary(r1)
 
 r2<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Ateles geoffroyi")))
+       family = "binomial", data =subset(d, Species %in% "Ateles geoffroyi"))
 summary(r2)
 
 r3<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Lagothrix lagotricha")))
+       family = "binomial", data =subset(d, Species %in% "Lagothrix lagotricha"))
 summary(r3)
 
 r4<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Alouatta palliata")))
+       family = "binomial", data =subset(d, Species %in% "Alouatta palliata"))
 summary(r4)
 
 r5<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Alouatta seniculus")))
+       family = "binomial", data =subset(d, Species %in% "Alouatta seniculus"))
 summary(r5)
 
 r6<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Pithecia aequatorialis")))
+       family = "binomial", data =subset(d, Species %in% "Pithecia aequatorialis"))
 summary(r6)
 
 r7<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Callicebus discolor")))
+       family = "binomial", data =subset(d, Species %in% "Callicebus discolor"))
 summary(r7)
 
 r8<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Cebus capucinus")))
+       family = "binomial", data =subset(d, Species %in% "Cebus capucinus"))
 summary(r8)
 
 r9<-glm(formula = LphsBin ~ scaled_Diam,
-       family = "binomial", data =(subset(d, Species %in% "Saimiri sciureus")))
+       family = "binomial", data =subset(d, Species %in% "Saimiri sciureus"))
 summary(r9)
