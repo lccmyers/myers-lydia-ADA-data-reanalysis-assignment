@@ -1,37 +1,50 @@
 library(lme4)
 library(broom)
 library(tidyverse)
+library(lmerTest)
+
 
 d<-read_csv("data.csv")
 head(d)
 
-r <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = d)
+r <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+            V_1 + V_2 + V_3 + V_4 + (1|MovClip), data = d)
 anova(r)
 
-r1 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Ateles belzebuth"))
-summary(r1)
 
-r2 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Ateles geoffroyi"))
-summary(r2)
+r1 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Ateles belzebuth"))
+anova(r1)
 
-r3 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Lagothrix lagotricha"))
-summary(r3)
+r2 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Ateles geoffroyi"))
+anova(r2)
 
-r4 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Alouatta palliata"))
-summary(r4)
+r3 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Lagothrix lagotricha"))
+anova(r3)
 
-r5 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Alouatta seniculus"))
-summary(r5)
+r4 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Alouatta palliata"))
+anova(r4)
 
-r6 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Pithecia aequatorialis"))
-summary(r6)
+r5 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Alouatta seniculus"))
+anova(r5)
 
-r7 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Callicebus discolor"))
-summary(r7)
+r6 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Pithecia aequatorialis"))
+anova(r6)
 
-r8 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Cebus capucinus"))
-summary(r8)
+r7 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Callicebus discolor"))
+anova(r7)
 
-r9 <- lmer(MeanLphsMS ~ scaled_Diam + (1|MovClip), data = subset(d, Species %in% "Saimiri sciureus"))
-summary(r9)
+r8 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Cebus capucinus"))
+anova(r8)
+
+r9 <- lmer(MeanLphsMS ~ scaled_Diam + sine_Orient + cos_Orient + sqrt_relSpeed +
+             (1|MovClip), data = subset(d, Species %in% "Saimiri sciureus"))
+anova(r9)
 
