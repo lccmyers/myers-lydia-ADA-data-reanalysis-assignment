@@ -6,8 +6,8 @@ head(d)
 
 #creating plots for relative substrate diameter
 p1<-ggplot(subset(d, Species %in% "Alouatta palliata"), 
-  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="orangered4")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="orangered4")+
+  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="#B22500")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B22500")+
   labs(y= "Limb Phase", x = "Relative Substrate Diameter")+ylim(0.00, 1.00)+xlim(0.0,15.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -32,8 +32,8 @@ p2<-p2+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p3<-ggplot(subset(d, Species %in% "Ateles belzebuth"), 
-  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="darkblue")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkblue")+
+  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="#005697")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#005697")+
   labs(y= "Limb Phase", x = "Relative Substrate Diameter")+ylim(0.00, 1.00)+xlim(0.0,9.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -43,7 +43,7 @@ p3<-ggplot(subset(d, Species %in% "Ateles belzebuth"),
   guides(color=guide_legend(override.aes=list(fill="gray")))
 p3<-p3+theme(panel.background = element_blank(), panel.border = element_rect(colour = "black", fill=NA, size=1),
              panel.grid=element_line("gray92"), axis.title.y=element_text(face="bold"))
-
+p3
 p4<-ggplot(subset(d, Species %in% "Ateles geoffroyi"), 
   aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="dodgerblue3")+
   geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="dodgerblue3")+
@@ -97,8 +97,8 @@ p7<-p7+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p8<-ggplot(subset(d, Species %in% "Pithecia aequatorialis"), 
-  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="darkred")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkred")+
+  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="#B5000F")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B5000F")+
   labs(y= "Limb Phase", x = "Relative Substrate Diameter")+ylim(0.00, 1.00)+xlim(0.0,6.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -110,8 +110,8 @@ p8<-p8+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"),axis.title.x=element_text(face="bold"))
 
 p9<-ggplot(subset(d, Species %in% "Saimiri sciureus"), 
-  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="mediumpurple")+
-  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="mediumpurple")+
+  aes(x = scaled_Diam, y = MeanLphsMS)) +scale_color_manual(values="#9F9BC3")+
+  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="#9F9BC3")+
   labs(y= "Limb Phase", x = "Relative Substrate Diameter")+ylim(0.00, 1.00)+xlim(0.0,12.5)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -127,8 +127,8 @@ plot_grid(p3, p4, p7, p1, p2, p6, p9, p8, p5)
 
 #creating plots for sqrt relative speed
 p1<-ggplot(subset(d, Species %in% "Alouatta palliata"), 
-           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="orangered4")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="orangered4")+
+           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="#B22500")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B22500")+
   labs(y= "Limb Phase", x = "Sqrt Relative Speed")+ylim(0.00, 1.00)+xlim(0.5,2.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -153,8 +153,8 @@ p2<-p2+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p3<-ggplot(subset(d, Species %in% "Ateles belzebuth"), 
-           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="darkblue")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkblue")+
+           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="#005697")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#005697")+
   labs(y= "Limb Phase", x = "Sqrt Relative Speed")+ylim(0.00, 1.00)+xlim(0.5,1.5)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -218,8 +218,8 @@ p7<-p7+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p8<-ggplot(subset(d, Species %in% "Pithecia aequatorialis"), 
-           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="darkred")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkred")+
+           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="#B5000F")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B5000F")+
   labs(y= "Limb Phase", x = "Sqrt Relative Speed")+ylim(0.00, 1.00)+xlim(0.6,1.6)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -231,8 +231,8 @@ p8<-p8+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"),axis.title.x=element_text(face="bold"))
 
 p9<-ggplot(subset(d, Species %in% "Saimiri sciureus"), 
-           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="mediumpurple")+
-  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="mediumpurple")+
+           aes(x = sqrt_relSpeed, y = MeanLphsMS)) +scale_color_manual(values="#9F9BC3")+
+  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="#9F9BC3")+
   labs(y= "Limb Phase", x = "Sqrt Relative Speed")+ylim(0.00, 1.00)+xlim(0.6,1.6)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -248,8 +248,8 @@ plot_grid(p3, p4, p7, p1, p2, p6, p9, p8, p5)
 
 #creating the plots for sine substrate orientation 
 p1<-ggplot(subset(d, Species %in% "Alouatta palliata"), 
-           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="orangered4")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="orangered4")+
+           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="#B22500")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B22500")+
   labs(y= "Limb Phase", x = "Sine Substrate Orientation")+ylim(0.00, 1.00)+xlim(-1.0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = -1, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -278,8 +278,8 @@ p2<-p2+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p3<-ggplot(subset(d, Species %in% "Ateles belzebuth"), 
-           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="darkblue")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkblue")+
+           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="#005697")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#005697")+
   labs(y= "Limb Phase", x = "Sine Substrate Orientation")+ylim(0.00, 1.00)+xlim(-1.0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = -1, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -353,8 +353,8 @@ p7<-p7+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p8<-ggplot(subset(d, Species %in% "Pithecia aequatorialis"), 
-           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="darkred")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkred")+
+           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="#B5000F")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B5000F")+
   labs(y= "Limb Phase", x = "Sine Substrate Orientation")+ylim(0.00, 1.00)+xlim(-1.0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = -1, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -368,8 +368,8 @@ p8<-p8+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"),axis.title.x=element_text(face="bold"))
 
 p9<-ggplot(subset(d, Species %in% "Saimiri sciureus"), 
-           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="mediumpurple")+
-  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="mediumpurple")+
+           aes(x = sine_Orient, y = MeanLphsMS)) +scale_color_manual(values="#9F9BC3")+
+  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="#9F9BC3")+
   labs(y= "Limb Phase", x = "Sine Substrate Orientation")+ylim(0.00, 1.00)+xlim(-1.0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = -1, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -387,8 +387,8 @@ plot_grid(p3, p4, p7, p1, p2, p6, p9, p8, p5)
 
 #creating the plots for cosine substrate orientation
 p1<-ggplot(subset(d, Species %in% "Alouatta palliata"), 
-           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="orangered4")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="orangered4")+
+           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="#B22500")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B22500")+
   labs(y= "Limb Phase", x = "Cosine Substrate Orientation")+ylim(0.00, 1.00)+xlim(0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -417,8 +417,8 @@ p2<-p2+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p3<-ggplot(subset(d, Species %in% "Ateles belzebuth"), 
-           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="darkblue")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkblue")+
+           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="#005697")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#005697")+
   labs(y= "Limb Phase", x = "Cosine Substrate Orientation")+ylim(0.00, 1.00)+xlim(0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -492,8 +492,8 @@ p7<-p7+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"))
 
 p8<-ggplot(subset(d, Species %in% "Pithecia aequatorialis"), 
-           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="darkred")+
-  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="darkred")+
+           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="#B5000F")+
+  geom_point(aes(color=Species), alpha=.5)+geom_smooth(method="lm",formula=y~x, aes(color=Species), fill="#B5000F")+
   labs(y= "Limb Phase", x = "Cosine Substrate Orientation")+ylim(0.00, 1.00)+xlim(0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
@@ -507,8 +507,8 @@ p8<-p8+theme(panel.background = element_blank(), panel.border = element_rect(col
              panel.grid=element_line("gray92"),axis.title.x=element_text(face="bold"))
 
 p9<-ggplot(subset(d, Species %in% "Saimiri sciureus"), 
-           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="mediumpurple")+
-  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="mediumpurple")+
+           aes(x = cos_Orient, y = MeanLphsMS)) +scale_color_manual(values="#9F9BC3")+
+  geom_point(aes(color=Species),alpha=.5)+geom_smooth(method="lm",formula=y~x,aes(color=Species), fill="#9F9BC3")+
   labs(y= "Limb Phase", x = "Cosine Substrate Orientation")+ylim(0.00, 1.00)+xlim(0,1.0)+
   geom_hline(yintercept=.5, linetype="dashed", size=1)+
   annotate(geom = "text", x = 0, y = .75, label = "DS", color = "black", angle = 90, fontface=2)+
